@@ -58,8 +58,9 @@
       <div class="projects-grid">
       <article class="card">
         <h3>TrainTrack — Coaching app</h3>
-        <p>A lightweight coaching app demonstrating product design, React/TS implementation, and a focus on UX for trainers. See architecture notes and code.</p>
+        <p>A lightweight coaching app demonstrating product design, React/TS implementation, and a focus on UX for trainers. Interact with a small embedded demo below or read the case study.</p>
         <p><a href="assets/TrainTrack/trainer_app_explained.md" target="_blank" rel="noopener">Read case study</a></p>
+        <div id="traintrack-root" style="min-height:360px;margin-top:12px;border-radius:8px;overflow:hidden;border:1px solid rgba(0,0,0,0.06)"></div>
       </article>
       <article class="card">
         <h3>Personal portfolio</h3>
@@ -67,6 +68,27 @@
         <p><a href="#">View details</a></p>
       </article>
       </div>
+
+      <script>
+      // Lazy-load the TrainTrack bundle when its container enters the viewport
+      (function(){
+        const root = document.getElementById('traintrack-root');
+        if(!root) return;
+        const load = ()=>{
+          if(window.__traintrackLoaded) return;
+          window.__traintrackLoaded = true;
+          const s = document.createElement('script');
+          s.src = 'assets/traintrack.bundle.js';
+          s.defer = true;
+          s.crossOrigin = 'anonymous';
+          document.body.appendChild(s);
+        };
+        if('IntersectionObserver' in window){
+          const io = new IntersectionObserver((entries, obs)=>{entries.forEach(e=>{if(e.isIntersecting){load(); obs.disconnect();}}),{rootMargin:'200px'});
+          io.observe(root);
+        } else { load(); }
+      })();
+      </script>
     </section>
 
     <section id="skills" class="section container">
