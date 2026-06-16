@@ -1,0 +1,10 @@
+{
+  "name": "vibecoding-site",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test:unit": "vitest run",
+    "test:e2e": "npx playwright test --config=playwright.config.ts",
+    "test": "npm run test:unit && npm run test:e2e"
+  }
+}
