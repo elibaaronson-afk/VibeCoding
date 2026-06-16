@@ -48,7 +48,7 @@ Todos (short):
 - add-assets: Add headshot, resume link, and certification links into content.
 - update-skills: Update Skills section to match the skills listed on Resume 6_2026.pdf; remove 'Solution design & architecture' and 'Stakeholder communication'.
 - create-project-cards: Add TrainTrack project card and at least one more project summary.
-- resume-download: Add resume download/action and printable resume meta.
+- resume-download: Add resume download/action and printable resume meta. (DONE: added alternate PDF link and download attribute on hero CTA)
 - contact-setup: Add mailto + LinkedIn; optionally wire Formspree if requested.
 - responsive-styles: Ensure responsive breakpoints and accessible colors.
 - seo-accessibility: Add meta tags, titles, alt attributes, and basic a11y checks.
