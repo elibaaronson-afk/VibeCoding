@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const html = fs.readFileSync(path.resolve(process.cwd(), 'Website', 'index.html'), 'utf-8');
+const html = fs.readFileSync(path.resolve(process.cwd(), 'index.html'), 'utf-8');
 
 describe('Website index.html', () => {
   beforeEach(() => {
