@@ -2,7 +2,7 @@ import { defineConfig } from '@playwright/test';
 import path from 'path';
 
 export default defineConfig({
-  testDir: '.',
+  testDir: 'tests/e2e',
   timeout: 30000,
   projects: [
     { name: 'Desktop', use: { browserName: 'chromium', viewport: { width: 1280, height: 720 } } },

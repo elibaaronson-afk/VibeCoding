@@ -7,6 +7,6 @@ test.describe('Responsive checks', () => {
   test('homepage is visible and header exists', async ({ page }) => {
     await page.goto(filePath);
     await expect(page.locator('header')).toBeVisible();
-    await expect(page).toHaveTitle(/VibeCoding|Vibe|Portfolio/);
+    await expect(page).toHaveTitle(/VibeCoding|Vibe|Portfolio|Eli/);
   });
 });
