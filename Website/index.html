@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio — [Your Name]</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <meta name="description" content="Personal portfolio — projects, skills, and contact.">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="#">[Your Name]</a>
+      <div class="header-controls">
+        <button id="themeToggle" class="theme-toggle" aria-pressed="false" aria-label="Toggle color theme">🌙</button>
+        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="siteNav">☰</button>
+      </div>
+      <nav id="siteNav" class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Hi — I'm [Your Name]</h1>
+          <p class="lead">A short tagline or summary goes here. Replace this with a few sentences about what you do and who you help.</p>
+          <p><a class="btn" href="#projects">See my work</a></p>
+        </div>
+        <div class="hero-media">
+          <!-- Replace with a real image in assets/. Use srcset for responsive images -->
+          <picture>
+            <source srcset="assets/profile-800.jpg 800w, assets/profile-400.jpg 400w" sizes="(max-width: 600px) 80vw, 320px">
+            <img src="assets/profile-400.jpg" alt="Portrait of [Your Name]" loading="lazy">
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section container">
+      <h2>About</h2>
+      <p>Short bio and background. Swap this placeholder with your own story, experience, and what you're looking for.</p>
+    </section>
+
+    <section id="projects" class="section container">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <!-- Repeat these cards for concrete projects -->
+        <article class="card">
+          <h3>Project Title</h3>
+          <p>Short description of the project and the technologies used.</p>
+          <p><a href="#">View details</a></p>
+        </article>
+        <article class="card">
+          <h3>Project Title</h3>
+          <p>Short description of the project and the technologies used.</p>
+          <p><a href="#">View details</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="section container">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>JavaScript / TypeScript</li>
+        <li>HTML &amp; CSS</li>
+        <li>React / Next.js</li>
+        <li>Backend / APIs</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="section container">
+      <h2>Contact</h2>
+      <p>Prefer email? Replace with mailto or a contact form integration.</p>
+      <form class="contact-form" action="#" method="post" onsubmit="alert('Replace with real form handler'); return false;">
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" required>
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" required>
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="4" required></textarea>
+        </label>
+        <button type="submit" class="btn">Send</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> [Your Name]. Built with a simple responsive template.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
