@@ -54,4 +54,35 @@ Todos (created)
 - contact-setup: Verify contact links and availability (pending)
 - ci-setup: Add CI workflow to run build + e2e tests (pending)
 
+How the application works
+
+Architecture overview
+- Framework: React + TypeScript scaffolded with Vite. App entry: src/main.tsx -> src/App.tsx.
+- Routes: simple pathname-based routing in App.tsx. Pages: Home (/), TrainTrack (/traintrack), Resume (/resume).
+- Components: Header (src/components/Header.tsx) provides navigation and theme toggle; pages live under src/pages.
+
+TrainTrack integration
+- Source: assets/TrainTrack contains entry.tsx and trainer_app.tsx. The app is dynamically imported from the TrainTrack entry and mounted into the DOM container #traintrack-root via mountTrainTrack(el, options).
+- Strategy: during integration the TrainTrack entry is imported into the React page (src/pages/TrainTrack.tsx) and mountTrainTrack is invoked with {compact:false} for the full app. An embeddable bundle is optional (build:embed) if a static widget artifact is needed later.
+
+Dev & build workflow
+- Local dev: npm run dev (Vite) serves the app at http://localhost:3000.
+- Production build: npm run build (Vite) outputs a production bundle in dist/; preview with npm run preview.
+- Embeddable artifact (optional): use esbuild/rollup to produce a standalone traintrack.bundle.js if needed for static embedding.
+
+Testing
+- E2E: Playwright configured in playwright.config.ts. Tests are under tests/e2e and the config starts the dev server before running tests.
+- Unit: Vitest may be added for component/unit tests (not currently present).
+
+Files of note
+- src/: React app source (pages, components, styles)
+- assets/: static assets including TrainTrack sources and Resume PDF
+- tests/e2e/: Playwright end-to-end tests
+- playwright.config.ts: E2E configuration and dev server command
+- package.json: dev/build/test scripts
+
+Updating this section
+- Keep this "How the application works" section up to date whenever routes, build steps, or the TrainTrack mounting contract change.
+- Recommended: update plan.md with a one-line summary for each PR that changes architecture or entry points.
+
 Saved plan.
