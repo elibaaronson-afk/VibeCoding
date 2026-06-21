@@ -2,16 +2,19 @@
   "name": "vibecoding-site",
   "version": "0.1.0",
   "private": true,
+  "engines": { "node": "18.x" },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview --port 5000",
     "test:e2e": "npx playwright test --config=playwright.config.ts"
   },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
   "devDependencies": {
     "vite": "^5.1.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "typescript": "^5.1.6",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
