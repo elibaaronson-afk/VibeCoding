@@ -2,7 +2,7 @@
   "name": "vibecoding-site",
   "version": "0.1.0",
   "private": true,
-  "engines": { "node": "18.x" },
+  "engines": { "node": "24.x" },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
