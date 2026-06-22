@@ -26,7 +26,6 @@ export default function Resume(){
   return (
     <main style={{padding:24,maxWidth:980,margin:'0 auto'}}>
       <h1 style={{marginTop:0}}>Resume</h1>
-      <p style={{marginTop:6}}>View or download the resume below. Key highlights and metrics are shown for quick scanning.</p>
 
       <div style={{marginTop:12,marginBottom:16}}>
         <div style={{display:'flex',gap:20,alignItems:'flex-start'}}>
@@ -35,6 +34,19 @@ export default function Resume(){
             <div style={{marginTop:12,display:'flex',gap:8}}>
               <a className="btn" href={pdfPath} target="_blank" rel="noopener" download="Eli_Resume_2026.pdf">Download PDF</a>
               <a className="btn" href={pdfPath} style={{background:'var(--muted)'}} target="_blank" rel="noopener">Open in new tab</a>
+            </div>
+          </div>
+
+          <div style={{width:220}}>
+            <div className="card" style={{padding:16,display:'flex',flexDirection:'column',gap:8,alignItems:'center'}}>
+              <div style={{fontSize:20,fontWeight:700}}><span ref={projectsRef}>0</span>+</div>
+              <div style={{fontSize:12,color:'var(--muted)'}}>Projects</div>
+              <div style={{height:8}} />
+              <div style={{fontSize:20,fontWeight:700}}><span ref={clientsRef}>0</span>+</div>
+              <div style={{fontSize:12,color:'var(--muted)'}}>Clients</div>
+              <div style={{height:8}} />
+              <div style={{fontSize:20,fontWeight:700}}><span ref={yearsRef}>0</span>+</div>
+              <div style={{fontSize:12,color:'var(--muted)'}}>Years</div>
             </div>
           </div>
 
