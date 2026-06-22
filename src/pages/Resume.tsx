@@ -1,11 +1,10 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef} from 'react';
 
 export default function Resume(){
   const pdfPath = '/assets/Resume%206_2026.pdf';
   const projectsRef = useRef<HTMLSpanElement | null>(null);
   const clientsRef = useRef<HTMLSpanElement | null>(null);
   const yearsRef = useRef<HTMLSpanElement | null>(null);
-  const [viewerOpen, setViewerOpen] = useState(false);
 
   useEffect(()=>{
     // simple counter animation
@@ -24,14 +23,6 @@ export default function Resume(){
     animate(yearsRef.current, 6);
   },[]);
 
-  useEffect(()=>{
-    if(viewerOpen){
-      const onKey = (e: KeyboardEvent) => { if(e.key === 'Escape') setViewerOpen(false); };
-      window.addEventListener('keydown', onKey);
-      document.body.style.overflow = 'hidden';
-      return () => { window.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
-    }
-  }, [viewerOpen]);
 
   return (
     <main style={{padding:24,maxWidth:980,margin:'0 auto',display:'flex',flexDirection:'column',minHeight:'100vh'}}>
@@ -45,7 +36,7 @@ export default function Resume(){
               <div style={{marginTop:12,display:'flex',gap:8,alignItems:'center'}}>
                 <a className="btn" href={pdfPath} target="_blank" rel="noopener" download="Eli_Resume_2026.pdf">Download PDF</a>
                 <a className="btn" href={pdfPath} style={{background:'var(--muted)'}} target="_blank" rel="noopener">Open in new tab</a>
-                <button className="btn" onClick={() => setViewerOpen(true)} style={{marginLeft:8}}>View full screen</button>
+                
               </div>
             </div>
           </div>
@@ -74,23 +65,7 @@ export default function Resume(){
         </div>
       </div>
 
-      <section style={{marginTop:28,flex:1,display:'flex',flexDirection:'column'}}>
-        <h2 style={{marginBottom:8}}>Full resume</h2>
-        <div className="card" style={{flex:1,overflow:'hidden',display:'flex'}}>
-          <iframe src={pdfPath} title="Resume PDF" style={{width:'100%',height:'100%',border:'none'}} />
-        </div>
-      </section>
 
-      {viewerOpen && (
-        <div role="dialog" aria-modal="true" style={{position:'fixed',inset:0,zIndex:2000,background:'rgba(0,0,0,0.85)',display:'flex',flexDirection:'column'}}>
-          <div style={{padding:12,display:'flex',justifyContent:'flex-end'}}>
-            <button className="btn" onClick={() => setViewerOpen(false)}>Close</button>
-          </div>
-          <div style={{flex:1}}>
-            <iframe src={pdfPath} title="Resume PDF Full" style={{width:'100%',height:'100%',border:'none'}} />
-          </div>
-        </div>
-      )}
 
     </main>
   );
