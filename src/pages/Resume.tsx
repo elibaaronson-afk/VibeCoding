@@ -29,18 +29,25 @@ export default function Resume(){
       <p style={{marginTop:6}}>View or download the resume below. Key highlights and metrics are shown for quick scanning.</p>
 
       <div style={{marginTop:12,marginBottom:16}}>
-        {/* Single large section with title and buttons */}
-        <div className="card" style={{padding:20,display:'flex',flexDirection:'column',gap:12}}>
-          <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',gap:12}}>
-            <div>
-              <h2 style={{margin:0}}>Resume — June 2026</h2>
-              <p style={{margin:4,color:'var(--muted)'}}>Snapshot of resume as of June 2026. Use the buttons to download or open the full PDF.</p>
-            </div>
-            <div style={{display:'flex',gap:8}}>
+        <div style={{display:'flex',gap:20,alignItems:'flex-start'}}>
+          <div className="card" style={{flex:1,padding:20}}>
+            <p style={{margin:0,color:'var(--muted)'}}>Snapshot of resume as of June 2026. Use the buttons to download or open the full PDF.</p>
+            <div style={{marginTop:12,display:'flex',gap:8}}>
               <a className="btn" href={pdfPath} target="_blank" rel="noopener" download="Eli_Resume_2026.pdf">Download PDF</a>
               <a className="btn" href={pdfPath} style={{background:'var(--muted)'}} target="_blank" rel="noopener">Open in new tab</a>
             </div>
           </div>
+
+          <aside style={{maxWidth:320}}>
+            <div className="card" style={{padding:16}}>
+              <h3 style={{marginTop:0}}>Contact</h3>
+              <p style={{margin:6}}>Email: <a href="mailto:elibaaronson@gmail.com">elibaaronson@gmail.com</a></p>
+              <p style={{margin:6}}>LinkedIn: <a href="https://www.linkedin.com/in/eli-aaronson" target="_blank" rel="noopener">Eli Aaronson</a></p>
+              <div style={{marginTop:12}}>
+                <a className="btn" href="mailto:elibaaronson@gmail.com">Email me</a>
+              </div>
+            </div>
+          </aside>
         </div>
       </div>
 
