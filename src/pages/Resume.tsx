@@ -65,7 +65,12 @@ export default function Resume(){
         </div>
       </div>
 
-
+      <section style={{marginTop:28}}>
+        <h2 style={{marginBottom:8}}>Full resume</h2>
+        <div className="card" style={{height:640,overflow:'hidden'}}>
+          <iframe src={pdfPath} title="Resume PDF" style={{width:'100%',height:'100%',border:'none'}} />
+        </div>
+      </section>
 
     </main>
   );
