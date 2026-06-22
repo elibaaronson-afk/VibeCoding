@@ -30,7 +30,7 @@ export default function Resume(){
       const top = el.getBoundingClientRect().top;
       const viewportHeight = window.innerHeight;
       const paddingBottom = 24; // main padding
-      const target = Math.max(300, Math.floor(viewportHeight - top - paddingBottom));
+    const target = Math.floor(viewportHeight - top - paddingBottom);
       el.style.height = `${target}px`;
     };
     updatePdfHeight();
