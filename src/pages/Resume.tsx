@@ -47,9 +47,20 @@ export default function Resume(){
         </div>
       </div>
 
-      <section style={{marginTop:20, display:'flex', justifyContent:'flex-end'}}>
+      <section style={{marginTop:20, display:'flex', gap:20, alignItems:'stretch'}}>
+        <div style={{flex:1}}>
+          <div className="card" style={{height:'100%',padding:16,display:'flex',flexDirection:'column'}}>
+            <h3 style={{marginTop:0}}>Selected achievements</h3>
+            <ul style={{marginTop:8}}>
+              <li>Built TrainTrack prototype used in stakeholder demos to validate product-market fit.</li>
+              <li>Launched features that increased adoption by X% (details in full resume PDF).</li>
+              <li>Led cross-functional discovery and delivered production-ready features.</li>
+            </ul>
+          </div>
+        </div>
+
         <aside style={{maxWidth:320}}>
-          <div className="card" style={{padding:16}}>
+          <div className="card" style={{padding:16,height:'100%'}}>
             <h3 style={{marginTop:0}}>Contact</h3>
             <p style={{margin:6}}>Email: <a href="mailto:elibaaronson@gmail.com">elibaaronson@gmail.com</a></p>
             <p style={{margin:6}}>LinkedIn: <a href="https://www.linkedin.com/in/eli-aaronson" target="_blank" rel="noopener">Eli Aaronson</a></p>
