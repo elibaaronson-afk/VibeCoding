@@ -49,13 +49,9 @@ export default function Resume(){
 
       <section style={{marginTop:20, display:'flex', gap:20, alignItems:'stretch'}}>
         <div style={{flex:1}}>
-          <div className="card" style={{height:'100%',padding:16,display:'flex',flexDirection:'column'}}>
-            <h3 style={{marginTop:0}}>Selected achievements</h3>
-            <ul style={{marginTop:8}}>
-              <li>Built TrainTrack prototype used in stakeholder demos to validate product-market fit.</li>
-              <li>Launched features that increased adoption by X% (details in full resume PDF).</li>
-              <li>Led cross-functional discovery and delivered production-ready features.</li>
-            </ul>
+          <div className="card" style={{height:'100%',padding:16,display:'flex',flexDirection:'column',justifyContent:'center'}}>
+            <h3 style={{marginTop:0}}>Resume — June 2026</h3>
+            <p style={{marginTop:8,marginBottom:0}}>Snapshot of resume as of June 2026. Use the download or open buttons above to access the full PDF.</p>
           </div>
         </div>
 
