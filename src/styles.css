@@ -16,9 +16,9 @@
 }
 :root[data-theme='dark']{
   /* Dark theme keeps green tones but higher contrast */
-  --olive:#50602e; --leaf:#6f9a3f; --darkgreen:#dfe6d5; --white:#0b1220; --gold:#c89d55;
+  --olive:#50602e; --leaf:#6f9a3f; --darkgreen:#dfe6d5; --white:#1f2937; --gold:#c89d55;
   --bg: var(--white);
-  --card: #071021;
+  --card: #111827;
   --muted: #9ca3af;
   --text: var(--darkgreen);
   --accent: var(--olive);
