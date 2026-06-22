@@ -1,22 +1,10 @@
 import React from 'react';
+import Hero from '../components/Hero';
 
 export default function Home(){
   return (
-    <main style={{padding:24,maxWidth:980,margin:'0 auto'}}>
-      <header style={{display:'flex',justifyContent:'space-between',alignItems:'flex-start',gap:24}}>
-        <div>
-          <h1 style={{margin:0,fontSize:28}}>Eli Aaronson</h1>
-          <p style={{margin:'8px 0 0',lineHeight:1.4}}><strong>Solutions Consultant</strong> — I help product and engineering teams turn customer needs into clear, achievable technical solutions that drive adoption and measurable business value.</p>
-          <div style={{marginTop:12,display:'flex',gap:8}}>
-            <a className="btn" href="/resume">View resume</a>
-                        <a className="btn" href="mailto:elibaaronson@gmail.com" style={{background:'var(--accent-2)'}}>Contact</a>
-          </div>
-        </div>
-        <aside style={{minWidth:180,textAlign:'right'}}>
-          <div style={{fontWeight:700}}>Availability</div>
-          <div style={{marginTop:6}}>Open to full-time roles — Solutions Consultant</div>
-        </aside>
-      </header>
+    <main>
+      <Hero />
 
       <section style={{marginTop:32}}>
         <h2 style={{marginBottom:12}}>Summary of strength</h2>

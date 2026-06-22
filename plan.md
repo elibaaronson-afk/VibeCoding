@@ -1,88 +1,64 @@
-Plan: React-first Website scaffold for TrainTrack
+Plan: React Vite site for TrainTrack
 
 Goal
-- Provide a React-based site scaffold so TrainTrack (React/TS) can be integrated and developed as a full app with a proper dev server, build, and e2e tests.
+- Build a maintainable React+Vite website that hosts TrainTrack (assets/TrainTrack), a downloadable resume, and case-study pages.
 
-Constraints
-- Preserve Website/assets (existing TrainTrack sources and static assets).
-- Keep repository minimal: include only what's necessary to develop and test the React app.
+Current state
+- Vite + React present (package.json). TrainTrack sources under assets/TrainTrack. Playwright e2e config exists.
+- Styles live in src/styles.css; app pages and components in src/.
 
-Proposed approach
-1. Initialize a minimal React dev setup in Website/ using Vite (recommended) or an esbuild dev server.
-   - Use a React+TypeScript template (e.g., npm create vite@latest . -- --template react-ts).
-   - Add scripts: dev, build, preview, test:e2e.
-2. Integrate TrainTrack source into the React app.
-   - Import assets/TrainTrack sources into src/ or import them directly from assets/TrainTrack into the app entry.
-   - Expose a mountTrainTrack API from src/entry.tsx to support embedding the app or mounting it on a route.
-3. Implement React routes/components
-   - Home route: lightweight landing page with a link/button to open TrainTrack.
-   - TrainTrack route: a React route that mounts the full TrainTrack app into the React application.
-4. Build & bundling
-   - Use Vite's build for production bundles. Optionally add a separate "build:embed" script that outputs an embeddable bundle if a static artifact is later required.
-   - Ensure the mount API is exported when needed for embedding.
-5. Testing & CI
-   - Keep Playwright e2e tests; configure the dev server in playwright.config to start the Vite dev server during tests.
-   - Add CI job(s) to run build and e2e tests.
+Approach
+1. Integrate TrainTrack: import assets/TrainTrack entry and expose mountTrainTrack in a TrainTrack page.
+2. Core components: implement Header, Hero, Card grid, Demo container, Footer.
+3. Build & QA: use Vite build and Playwright e2e (add visual checks for key breakpoints).
+4. Branching: use a feature branch per task and run CI checks before merging.
 
-Todos (suggested)
-- setup-react-dev: Create Vite React+TS scaffold and package.json scripts
-- integrate-traintrack-src: Import TrainTrack sources into src/ and wire mount API
-- create-pages: Implement Home and TrainTrack React routes/components
-- dev-build-test: Validate dev server, build output, and run Playwright tests
+Design ideas (all pages except TrainTrack)
+- Design goals: clean, modern, professional, and lightly interactive while preserving existing color scheme.
+
+Home / Landing
+- Layout: bold hero with concise value statement, 2 CTAs (Demo, Contact). Use a split layout: headline + animated SVG or gradient accent.
+- Interactions: subtle parallax on hero illustration, CTA button with micro-interaction (scale + shadow), scroll-down hint that morphs into section progress indicator.
+- Sections: highlights (3 cards with hover elevation + reveal animation), latest case studies (card carousel or masonry grid), resume CTA.
+
+Resume / About
+- Layout: two-column on desktop (bio + metrics column), stacked on mobile.
+- Interactions: animated counters for key metrics (clients, projects), progressive reveal for timeline entries (staggered fade/slide). Download resume button with copy-to-clipboard contact details.
+- Accessibility: provide plain-text resume link and ARIA labels for timeline items.
+
+Work / Case Studies
+- Layout: filterable card grid with tags/chips; each card shows thumbnail, short blurb, and impact metrics.
+- Interactions: hover flip or lift with quick actions (View case study, Live demo). Clicking opens a modal with detail (animated entry) rather than navigating away.
+- Extras: tag-based filtering with animated transitions and small performance-friendly image lazy-loading.
+
+Contact / Hire
+- Layout: compact form plus contact methods and availability badge.
+- Interactions: inline validation with friendly microcopy, success state with animated check and optional auto-schedule CTA (link to calendar).
+- Privacy: store no sensitive data; use mailto or external form endpoint as configured.
+
+Blog / Resources (optional)
+- Layout: list or card view with reading-time and tags.
+- Interactions: progressive loading, lightweight previews on hover, and keyboard-accessible pagination.
+
+Global components & polish
+- Header: sticky, compact with logo, nav, CTA, and theme toggle. Add a subtle scroll shadow and a mobile hamburger with animated open/close.
+- Buttons & chips: defined design tokens for hover/focus states derived from color scheme.
+- Motion: CSS-only animations scoped to utility classes; respect prefers-reduced-motion.
+- Tokens: centralize colors, type scale, spacing in :root or tokens.ts for consistency.
+- Accessibility: high contrast, keyboard focus styles, semantic HTML and ARIA where needed.
+- Performance: defer heavy visuals, use SVGs and optimized images, lazy-load non-critical assets.
+
+Verification & tests
+- Visual smoke tests: Playwright snapshots for hero, nav, and a case-study modal at desktop/tablet/mobile widths.
+- Accessibility checks: automated axe-core checks during CI for key pages.
+
+Todos (unchanged)
+- integrate-traintrack-src: Import TrainTrack entry and mount it in src/pages/TrainTrack (pending)
+- add-resume-summary: Add a Resume page and link with 3–5 bullets (pending)
+- add-case-studies: Create 2–3 case study pages with cards and details (pending)
+- ci-setup: Add CI job to build and run Playwright e2e (pending)
 
 Notes
-- Website/assets is preserved; copy static assets into the app's public/ when scaffolding the React project.
-- After approval, implement the scaffold and run tests.
-
-Next steps (prioritized for hiring-manager focus):
-
-1. Finish TrainTrack integration
-   - integrate-traintrack-src: Make TrainTrack importable in the React app and export a mount API.
-2. Resume & hero
-   - Ensure resume (Website/assets/Resume 6_2026.pdf) is prominently downloadable and summarized with 3–5 impact bullets on Home.
-3. Case studies
-   - Add 2–3 concise case studies (TrainTrack + one more) with problem/approach/outcome and links to demo/code.
-4. Contact & availability
-   - Mailto, LinkedIn, and a short note on availability.
-5. Tests & CI
-   - Run Playwright e2e (dev server) and add a CI workflow for build + e2e.
-
-Todos (created)
-- integrate-traintrack-src: Import TrainTrack sources into src/ and wire mount API (pending)
-- add-resume-summary: Add resume summary and impact bullets to Home (pending)
-- add-case-studies: Flesh out TrainTrack case study and add one more (pending)
-- contact-setup: Verify contact links and availability (pending)
-- ci-setup: Add CI workflow to run build + e2e tests (pending)
-
-How the application works
-
-Architecture overview
-- Framework: React + TypeScript scaffolded with Vite. App entry: src/main.tsx -> src/App.tsx.
-- Routes: simple pathname-based routing in App.tsx. Pages: Home (/), TrainTrack (/traintrack), Resume (/resume).
-- Components: Header (src/components/Header.tsx) provides navigation and theme toggle; pages live under src/pages.
-
-TrainTrack integration
-- Source: assets/TrainTrack contains entry.tsx and trainer_app.tsx. The app is dynamically imported from the TrainTrack entry and mounted into the DOM container #traintrack-root via mountTrainTrack(el, options).
-- Strategy: during integration the TrainTrack entry is imported into the React page (src/pages/TrainTrack.tsx) and mountTrainTrack is invoked with {compact:false} for the full app. An embeddable bundle is optional (build:embed) if a static widget artifact is needed later.
-
-Dev & build workflow
-- Local dev: npm run dev (Vite) serves the app at http://localhost:3000.
-- Production build: npm run build (Vite) outputs a production bundle in dist/; preview with npm run preview.
-- Embeddable artifact (optional): use esbuild/rollup to produce a standalone traintrack.bundle.js if needed for static embedding.
-
-Testing
-- E2E: Playwright configured in playwright.config.ts. Tests are under tests/e2e and the config starts the dev server before running tests.
-- Unit: Vitest may be added for component/unit tests (not currently present).
-
-Files of note
-- src/: React app source (pages, components, styles)
-- assets/: static assets including TrainTrack sources and Resume PDF
-- tests/e2e/: Playwright end-to-end tests
-- playwright.config.ts: E2E configuration and dev server command
-- package.json: dev/build/test scripts
-
-Updating this section
-- Keep this "How the application works" section up to date whenever routes, build steps, or the TrainTrack mounting contract change.
-- Recommended: update plan.md with a one-line summary for each PR that changes architecture or entry points.
+- This document contains UI/UX ideas only. Implementation requires explicit approval before changing code.
 
 Saved plan.

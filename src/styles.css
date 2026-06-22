@@ -28,7 +28,8 @@
 html,body,#root{height:100%}
 body{font-family:'Inter',system-ui,Segoe UI,Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);margin:0;line-height:1.45}
 .container{max-width:1000px;margin:0 auto;padding:0 16px}
-.site-header{backdrop-filter: blur(6px);position:sticky;top:0;z-index:40;background:linear-gradient(180deg,rgba(255,255,255,0.6),transparent);border-bottom:1px solid rgba(0,0,0,0.04)}
+.site-header{backdrop-filter: blur(6px);position:sticky;top:0;z-index:40;background:linear-gradient(180deg,rgba(255,255,255,0.6),transparent);border-bottom:1px solid rgba(0,0,0,0.04);transition:box-shadow .18s ease, background-color .18s ease}
+.site-header.scrolled{box-shadow:0 6px 24px rgba(2,6,23,0.06);background-color:rgba(255,255,255,0.88)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
 .logo{font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none}
 .site-nav{display:flex;gap:12px;align-items:center}
@@ -36,7 +37,8 @@ body{font-family:'Inter',system-ui,Segoe UI,Arial,Helvetica,sans-serif;backgroun
 .nav-link:hover{background:var(--card);color:var(--text)}
 .header-actions{display:flex;align-items:center;gap:8px}
 .theme-toggle{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:6px 8px;border-radius:8px;cursor:pointer}
-.mobile-toggle{display:none;background:transparent;border:1px solid rgba(0,0,0,0.06);padding:6px 8px;border-radius:8px;cursor:pointer;margin-left:8px}
+.mobile-toggle{display:none;background:transparent;border:1px solid rgba(0,0,0,0.06);padding:6px 8px;border-radius:8px;cursor:pointer;margin-left:8px;transition:transform .18s ease}
+.mobile-toggle:active{transform:scale(.96)}
 main{padding:28px 16px}
 h1{font-size:28px;margin:0}
 h2{font-size:18px;margin-bottom:8px}
@@ -45,6 +47,22 @@ h2{font-size:18px;margin-bottom:8px}
 .btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(16,24,40,0.12)}
 section ul{padding-left:18px}
 aside{font-size:13px;color:var(--muted)}
+
+/* Hero styles */
+.hero{padding:36px 0;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent)}
+.hero-inner{display:flex;align-items:center;gap:24px}
+.hero-copy{flex:1}
+.hero-title{font-size:32px;margin:0 0 8px}
+.hero-sub{margin:0 0 12px;color:var(--muted)}
+.hero-ctas{display:flex;gap:10px}
+.hero-image{width:220px;height:160px;flex:0 0 220px;border-radius:14px;object-fit:cover;box-shadow:0 8px 30px rgba(2,6,23,0.08);transform:translateY(0);animation:float 6s ease-in-out infinite}
+@keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+
+/* Mobile adjustments for hero */
+@media (max-width:720px){
+  .hero-inner{flex-direction:column;align-items:flex-start}
+  .hero-image{width:160px;height:120px}
+}
 
 /* Mobile navigation */
 @media (max-width:720px){
