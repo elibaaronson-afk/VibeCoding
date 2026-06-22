@@ -24,7 +24,7 @@ export default function Resume(){
   },[]);
 
   return (
-    <main style={{padding:24,maxWidth:980,margin:'0 auto'}}>
+    <main style={{padding:24,maxWidth:980,margin:'0 auto',display:'flex',flexDirection:'column',minHeight:'100vh'}}>
       <h1 style={{marginTop:0}}>Resume</h1>
 
       <div style={{marginTop:12,marginBottom:16}}>
@@ -63,9 +63,9 @@ export default function Resume(){
         </div>
       </div>
 
-      <section style={{marginTop:28}}>
-        <h2>Full resume</h2>
-        <div className="card" style={{height:480,overflow:'hidden'}}>
+      <section style={{marginTop:28,flex:1,display:'flex',flexDirection:'column'}}>
+        <h2 style={{marginBottom:8}}>Full resume</h2>
+        <div className="card" style={{flex:1,overflow:'hidden',display:'flex'}}>
           <iframe src={pdfPath} title="Resume PDF" style={{width:'100%',height:'100%',border:'none'}} />
         </div>
       </section>
