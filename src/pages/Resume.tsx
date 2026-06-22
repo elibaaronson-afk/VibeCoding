@@ -6,6 +6,7 @@ export default function Resume(){
   const clientsRef = useRef<HTMLSpanElement | null>(null);
   const yearsRef = useRef<HTMLSpanElement | null>(null);
   const pdfContainerRef = useRef<HTMLDivElement | null>(null);
+  const pdfIframeRef = useRef<HTMLIFrameElement | null>(null);
 
   useEffect(()=>{
     // simple counter animation
@@ -26,12 +27,14 @@ export default function Resume(){
     // adjust pdf height to fill remaining viewport
     const updatePdfHeight = () => {
       const el = pdfContainerRef.current;
-      if(!el) return;
-      const top = el.getBoundingClientRect().top;
-      const viewportHeight = window.innerHeight;
-      const paddingBottom = 24; // main padding
+    const iframe = pdfIframeRef.current;
+    if(!el || !iframe) return;
+    const top = el.getBoundingClientRect().top;
+    const viewportHeight = window.innerHeight;
+    const paddingBottom = 24; // main padding
     const target = Math.floor(viewportHeight - top - paddingBottom);
-      el.style.height = `${target}px`;
+    // set the iframe's height directly instead of container
+    iframe.style.height = `${target}px`;
     };
     updatePdfHeight();
     window.addEventListener('resize', updatePdfHeight);
@@ -84,7 +87,7 @@ export default function Resume(){
       <section style={{marginTop:28,flex:1,display:'flex',flexDirection:'column'}}>
         <h2 style={{marginBottom:8}}>Full resume</h2>
         <div ref={pdfContainerRef} className="card" style={{flex:1,overflow:'hidden',display:'flex',minHeight:0}}>
-          <iframe src={pdfPath} title="Resume PDF" style={{width:'100%',height:'100%',border:'none'}} />
+          <iframe ref={pdfIframeRef} src={pdfPath} title="Resume PDF" style={{width:'100%',height:'100%',border:'none'}} />
         </div>
       </section>
 
