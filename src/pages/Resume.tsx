@@ -28,8 +28,8 @@ export default function Resume(){
     <main style={{padding:24,maxWidth:980,margin:'0 auto',display:'flex',flexDirection:'column',minHeight:'100vh'}}>
       <h1 style={{marginTop:0}}>Resume</h1>
 
-      <div style={{marginTop:12,marginBottom:16}}>
-        <div style={{display:'flex',gap:20,alignItems:'stretch'}}>
+      <div style={{marginTop:12,marginBottom:16,height:220}}>
+        <div style={{display:'flex',gap:20,alignItems:'stretch',height:'100%'}}>
           <div style={{flex:1,minWidth:0}}>
             <div className="card" style={{height:'100%',padding:20,display:'flex',flexDirection:'column',justifyContent:'center'}}>
               <p style={{margin:0,color:'var(--muted)'}}>Snapshot of resume as of June 2026.</p>
@@ -65,9 +65,9 @@ export default function Resume(){
         </div>
       </div>
 
-      <section style={{marginTop:28}}>
+      <section style={{marginTop:28,flex:1,display:'flex',flexDirection:'column'}}>
         <h2 style={{marginBottom:8}}>Full resume</h2>
-        <div className="card" style={{height:640,overflow:'hidden'}}>
+        <div className="card" style={{flex:1,overflow:'hidden',display:'flex',minHeight:0}}>
           <iframe src={pdfPath} title="Resume PDF" style={{width:'100%',height:'100%',border:'none'}} />
         </div>
       </section>
