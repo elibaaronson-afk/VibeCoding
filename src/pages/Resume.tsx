@@ -28,30 +28,30 @@ export default function Resume(){
       <h1 style={{marginTop:0}}>Resume</h1>
 
       <div style={{marginTop:12,marginBottom:16}}>
-        <div style={{display:'flex',gap:20,alignItems:'flex-start'}}>
-          <div className="card" style={{flex:1,padding:20}}>
-            <p style={{margin:0,color:'var(--muted)'}}>Snapshot of resume as of June 2026. Use the buttons to download or open the full PDF.</p>
-            <div style={{marginTop:12,display:'flex',gap:8}}>
-              <a className="btn" href={pdfPath} target="_blank" rel="noopener" download="Eli_Resume_2026.pdf">Download PDF</a>
-              <a className="btn" href={pdfPath} style={{background:'var(--muted)'}} target="_blank" rel="noopener">Open in new tab</a>
+        <div style={{display:'flex',gap:20,alignItems:'stretch'}}>
+          <div style={{flex:1,minWidth:0}}>
+            <div className="card" style={{height:'100%',padding:20,display:'flex',flexDirection:'column',justifyContent:'center'}}>
+              <p style={{margin:0,color:'var(--muted)'}}>Snapshot of resume as of June 2026.</p>
+              <div style={{marginTop:12,display:'flex',gap:8}}>
+                <a className="btn" href={pdfPath} target="_blank" rel="noopener" download="Eli_Resume_2026.pdf">Download PDF</a>
+                <a className="btn" href={pdfPath} style={{background:'var(--muted)'}} target="_blank" rel="noopener">Open in new tab</a>
+              </div>
             </div>
           </div>
 
-          <div style={{width:220}}>
-            <div className="card" style={{padding:16,display:'flex',flexDirection:'column',gap:8,alignItems:'center'}}>
-              <div style={{fontSize:20,fontWeight:700}}><span ref={projectsRef}>0</span>+</div>
-              <div style={{fontSize:12,color:'var(--muted)'}}>Projects</div>
-              <div style={{height:8}} />
-              <div style={{fontSize:20,fontWeight:700}}><span ref={clientsRef}>0</span>+</div>
-              <div style={{fontSize:12,color:'var(--muted)'}}>Clients</div>
-              <div style={{height:8}} />
-              <div style={{fontSize:20,fontWeight:700}}><span ref={yearsRef}>0</span>+</div>
-              <div style={{fontSize:12,color:'var(--muted)'}}>Years</div>
+          <div style={{flex:1,minWidth:0}}>
+            <div className="card" style={{height:'100%',padding:16,display:'flex',flexDirection:'column',gap:12,alignItems:'center',justifyContent:'center'}}>
+              <div style={{fontSize:22,fontWeight:700}}><span ref={projectsRef}>0</span>+</div>
+              <div style={{fontSize:13,color:'var(--muted)',marginBottom:8}}>Projects</div>
+              <div style={{fontSize:22,fontWeight:700}}><span ref={clientsRef}>0</span>+</div>
+              <div style={{fontSize:13,color:'var(--muted)',marginBottom:8}}>Clients</div>
+              <div style={{fontSize:22,fontWeight:700}}><span ref={yearsRef}>0</span>+</div>
+              <div style={{fontSize:13,color:'var(--muted)'}}>Years</div>
             </div>
           </div>
 
-          <aside style={{maxWidth:320}}>
-            <div className="card" style={{padding:16}}>
+          <aside style={{flex:1,minWidth:0}}>
+            <div className="card" style={{padding:16,height:'100%'}}>
               <h3 style={{marginTop:0}}>Contact</h3>
               <p style={{margin:6}}>Email: <a href="mailto:elibaaronson@gmail.com">elibaaronson@gmail.com</a></p>
               <p style={{margin:6}}>LinkedIn: <a href="https://www.linkedin.com/in/eli-aaronson" target="_blank" rel="noopener">Eli Aaronson</a></p>
