@@ -47,24 +47,8 @@ export default function Resume(){
         </div>
       </div>
 
-      <section style={{display:'grid',gridTemplateColumns:'1fr 320px',gap:20}}>
-        <div>
-          <h2 style={{marginTop:0}}>Summary</h2>
-          <p><strong>Solutions Consultant</strong> with a track record of translating customer needs into prioritized roadmaps and production-ready features.</p>
-          <ul>
-            <li>Lead discovery and prototyping to validate product assumptions.</li>
-            <li>Scope and deliver features with engineering teams emphasizing testability and observability.</li>
-            <li>Communicate outcomes to stakeholders and measure product impact.</li>
-          </ul>
-
-          <h3>Selected achievements</h3>
-          <ul>
-            <li>Built TrainTrack prototype used in stakeholder demos to validate product-market fit.</li>
-            <li>Launched features that increased adoption by X% (details in full resume PDF).</li>
-          </ul>
-        </div>
-
-        <aside style={{position:'relative'}}>
+      <section style={{marginTop:20, display:'flex', justifyContent:'flex-end'}}>
+        <aside style={{maxWidth:320}}>
           <div className="card" style={{padding:16}}>
             <h3 style={{marginTop:0}}>Contact</h3>
             <p style={{margin:6}}>Email: <a href="mailto:elibaaronson@gmail.com">elibaaronson@gmail.com</a></p>
