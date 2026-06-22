@@ -28,44 +28,21 @@ export default function Resume(){
       <h1 style={{marginTop:0}}>Resume</h1>
       <p style={{marginTop:6}}>View or download the resume below. Key highlights and metrics are shown for quick scanning.</p>
 
-      <div style={{display:'flex',gap:12,marginTop:12,marginBottom:16,alignItems:'center'}}>
-        <a className="btn" href={pdfPath} target="_blank" rel="noopener" download="Eli_Resume_2026.pdf">Download PDF</a>
-        <a className="btn" href={pdfPath} style={{background:'var(--muted)'}} target="_blank" rel="noopener">Open in new tab</a>
-        <div style={{marginLeft:'auto',display:'flex',gap:12,alignItems:'center'}} aria-hidden>
-          <div style={{textAlign:'center'}}>
-            <div style={{fontSize:20,fontWeight:700}}><span ref={projectsRef}>0</span>+</div>
-            <div style={{fontSize:12,color:'var(--muted)'}}>Projects</div>
-          </div>
-          <div style={{textAlign:'center'}}>
-            <div style={{fontSize:20,fontWeight:700}}><span ref={clientsRef}>0</span>+</div>
-            <div style={{fontSize:12,color:'var(--muted)'}}>Clients</div>
-          </div>
-          <div style={{textAlign:'center'}}>
-            <div style={{fontSize:20,fontWeight:700}}><span ref={yearsRef}>0</span>+</div>
-            <div style={{fontSize:12,color:'var(--muted)'}}>Years</div>
+      <div style={{marginTop:12,marginBottom:16}}>
+        {/* Single large section with title and buttons */}
+        <div className="card" style={{padding:20,display:'flex',flexDirection:'column',gap:12}}>
+          <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',gap:12}}>
+            <div>
+              <h2 style={{margin:0}}>Resume — June 2026</h2>
+              <p style={{margin:4,color:'var(--muted)'}}>Snapshot of resume as of June 2026. Use the buttons to download or open the full PDF.</p>
+            </div>
+            <div style={{display:'flex',gap:8}}>
+              <a className="btn" href={pdfPath} target="_blank" rel="noopener" download="Eli_Resume_2026.pdf">Download PDF</a>
+              <a className="btn" href={pdfPath} style={{background:'var(--muted)'}} target="_blank" rel="noopener">Open in new tab</a>
+            </div>
           </div>
         </div>
       </div>
-
-      <section style={{marginTop:20, display:'flex', gap:20, alignItems:'stretch'}}>
-        <div style={{flex:1}}>
-          <div className="card" style={{height:'100%',padding:16,display:'flex',flexDirection:'column',justifyContent:'center'}}>
-            <h3 style={{marginTop:0}}>Resume — June 2026</h3>
-            <p style={{marginTop:8,marginBottom:0}}>Snapshot of resume as of June 2026. Use the download or open buttons above to access the full PDF.</p>
-          </div>
-        </div>
-
-        <aside style={{maxWidth:320}}>
-          <div className="card" style={{padding:16,height:'100%'}}>
-            <h3 style={{marginTop:0}}>Contact</h3>
-            <p style={{margin:6}}>Email: <a href="mailto:elibaaronson@gmail.com">elibaaronson@gmail.com</a></p>
-            <p style={{margin:6}}>LinkedIn: <a href="https://www.linkedin.com/in/eli-aaronson" target="_blank" rel="noopener">Eli Aaronson</a></p>
-            <div style={{marginTop:12}}>
-              <a className="btn" href="mailto:elibaaronson@gmail.com">Email me</a>
-            </div>
-          </div>
-        </aside>
-      </section>
 
       <section style={{marginTop:28}}>
         <h2>Full resume</h2>
