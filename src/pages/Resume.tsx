@@ -20,9 +20,8 @@ export default function Resume(){
       };
       requestAnimationFrame(step);
     };
-    animate(projectsRef.current, 14);
-    animate(clientsRef.current, 8);
-    animate(yearsRef.current, 6);
+    animate(clientsRef.current, 25);
+    animate(yearsRef.current, 2);
 
     // adjust pdf height to fill remaining viewport
     const updatePdfHeight = () => {

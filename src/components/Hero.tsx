@@ -8,7 +8,7 @@ export default function Hero(){
         <div className="hero-copy">
           <h1 className="hero-title">Eli Aaronson</h1>
           <p className="hero-sub">
-            Solutions Consultant — turning customer needs into clear, testable product outcomes and measurable business value.
+            Solutions Consultant — turning customer needs into clear, testable product outcomes and measurable business value. <br />
             Sales Development Representative — building relationships and generating leads through research, outreach, and discovery.
           </p>
           <div className="hero-ctas">
