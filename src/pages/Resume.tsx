@@ -61,8 +61,6 @@ export default function Resume(){
 
           <div style={{flex:1,minWidth:0}}>
             <div className="card" style={{height:'100%',padding:16,display:'flex',flexDirection:'column',gap:12,alignItems:'center',justifyContent:'center'}}>
-              <div style={{fontSize:22,fontWeight:700}}><span ref={projectsRef}>0</span>+</div>
-              <div style={{fontSize:13,color:'var(--muted)',marginBottom:8}}>Projects</div>
               <div style={{fontSize:22,fontWeight:700}}><span ref={clientsRef}>0</span>+</div>
               <div style={{fontSize:13,color:'var(--muted)',marginBottom:8}}>Clients</div>
               <div style={{fontSize:22,fontWeight:700}}><span ref={yearsRef}>0</span>+</div>
