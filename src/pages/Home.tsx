@@ -11,7 +11,7 @@ export default function Home(){
         <ul>
           <li>Translate customer problems into prioritized technical proposals and actionable roadmaps.</li>
           <li>Lead cross-functional discovery and prototype rapidly to validate assumptions with stakeholders.</li>
-          <li>Scope and ship production-ready features with engineering teams, emphasizing clarity, testability, and observability.</li>
+          <li>Proven sales record with strong client relationships, client retention, and consistent deal closure.</li>
         </ul>
       </section>
 
@@ -21,11 +21,6 @@ export default function Home(){
           <h3 style={{marginTop:0}}>TrainTrack — Coaching app</h3>
           <p style={{margin:'6px 0'}}>Built a trainer-focused React/TypeScript prototype demonstrating product flow, UX patterns, and a compact embeddable preview used for stakeholder demos.</p>
           <p style={{marginTop:8}}><a className="btn" href="/traintrack">Open full app</a></p>
-        </article>
-
-        <article style={{border:'1px solid rgba(0,0,0,0.06)',padding:16,borderRadius:8}}>
-          <h3 style={{marginTop:0}}>Portfolio & Resume</h3>
-          <p style={{margin:'6px 0'}}>See the downloadable resume for recent roles, certifications, and measurable outcomes from past projects.</p>
         </article>
       </section>
 
