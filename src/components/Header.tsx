@@ -40,6 +40,7 @@ export default function Header(){
         <nav className={`site-nav ${open ? 'open' : ''}`} aria-label="Primary" id="primary-nav">
           <a href="/" className="nav-link" onClick={() => setOpen(false)} ref={firstLinkRef}>Home</a>
           <a href="/traintrack" className="nav-link" onClick={() => setOpen(false)}>TrainTrack</a>
+          <a href="/project-neon" className="nav-link" onClick={() => setOpen(false)}>Project_Neon</a>
           <a href="/resume" className="nav-link" onClick={() => setOpen(false)}>Resume</a>
         </nav>
         <div className="header-actions">
