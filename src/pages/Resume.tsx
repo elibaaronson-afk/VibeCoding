@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from 'react';
 
 export default function Resume(){
-  const pdfPath = 'dist/assets/Resume 7_2026.pdf';
+  const pdfPath = '/assets/Resume 7_2026.pdf';
   const projectsRef = useRef<HTMLSpanElement | null>(null);
   const clientsRef = useRef<HTMLSpanElement | null>(null);
   const yearsRef = useRef<HTMLSpanElement | null>(null);
