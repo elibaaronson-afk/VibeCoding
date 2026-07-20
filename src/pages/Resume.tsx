@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from 'react';
 
 export default function Resume(){
-  const pdfPath = '/assets/Resume%206_2026.pdf';
+  const pdfPath = 'dist/assets/Resume 7_2026.pdf';
   const projectsRef = useRef<HTMLSpanElement | null>(null);
   const clientsRef = useRef<HTMLSpanElement | null>(null);
   const yearsRef = useRef<HTMLSpanElement | null>(null);
@@ -50,7 +50,7 @@ export default function Resume(){
         <div style={{display:'flex',gap:20,alignItems:'stretch',height:'100%'}}>
           <div style={{flex:1,minWidth:0}}>
             <div className="card" style={{height:'100%',padding:20,display:'flex',flexDirection:'column',justifyContent:'center'}}>
-              <p style={{margin:0,color:'var(--muted)'}}>Snapshot of resume as of June 2026.</p>
+              <p style={{margin:0,color:'var(--muted)'}}>Snapshot of resume as of July 2026.</p>
               <div style={{marginTop:12,display:'flex',gap:8,alignItems:'center'}}>
                 <a className="btn" href={pdfPath} target="_blank" rel="noopener" download="Eli_Resume_2026.pdf">Download PDF</a>
                 <a className="btn" href={pdfPath} style={{background:'var(--muted)'}} target="_blank" rel="noopener">Open in new tab</a>
