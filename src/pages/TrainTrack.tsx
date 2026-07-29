@@ -19,7 +19,7 @@ export default function TrainTrack(){
       <nav style={{marginBottom:12}} aria-label="breadcrumb">
         <a className="btn" href="/" style={{background:'var(--muted)', color:'#fff'}}>← Back to site</a>
       </nav>
-      <h1>TrainTrack</h1>
+      <h1>TrainTrack (Demo Version)</h1>
       <div id="traintrack-root" style={{minHeight:600,border:'1px solid rgba(0,0,0,0.06)',borderRadius:8,overflow:'hidden'}}></div>
     </main>
   );
