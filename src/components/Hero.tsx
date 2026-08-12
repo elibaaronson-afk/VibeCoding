@@ -12,7 +12,6 @@ export default function Hero(){
             Sales Development Representative — building relationships and generating leads through research, outreach, and discovery.
           </p>
           <div className="hero-ctas">
-            <a className="btn" href="/traintrack">Open demo</a>
             <a className="btn" href="/resume" style={{background:'var(--accent-2)'}}>View resume</a>
           </div>
         </div>
